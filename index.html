@@ -72,6 +72,13 @@
   .blob.b2{background:#6fc2c3;animation-duration:18s}
   @keyframes float{to{transform:translate(60px,40px) scale(1.15)}}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+  .steps{counter-reset:paso}
+  .step{position:relative;padding-left:52px}
+  .step::before{counter-increment:paso;content:counter(paso);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-weight:700}
+  .cta{text-align:center;padding:64px 0}
+  .cta h2{font-size:2rem;margin:0 0 12px}
+  .cta p{color:var(--ink-soft);margin:0 0 24px}
 </style>
 </head>
 <body>
@@ -99,6 +106,30 @@
     <p>Trabajo tanto en el frontend (lo que ve el usuario) como en el backend (servidor, base de datos y procesos internos), así que me encargo del proyecto completo: diseño, desarrollo, publicación y mantenimiento.</p>
     <div class="skills">
       <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>SQL</span><span>Java</span><span>Node.js</span><span>Servidores</span><span>Git / GitHub</span>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="reveal">
+  <div class="wrap">
+    <h2>Qué ofrezco</h2>
+    <p class="sub">Tres formas de trabajar conmigo.</p>
+    <div class="grid">
+      <article class="card reveal">
+        <span class="tag">Web</span>
+        <h3>Páginas web para negocios</h3>
+        <p>Sitios claros y rápidos para que te encuentren y te contacten: presentación, servicios, galería y botón de WhatsApp.</p>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Sistemas</span>
+        <h3>Sistemas a medida</h3>
+        <p>Paneles de administración, gestión de turnos, pedidos o stock, con base de datos y accesos por usuario.</p>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Soporte</span>
+        <h3>Hosting y mantenimiento</h3>
+        <p>Publicación en tu dominio, cambios de contenido y actualizaciones cuando las necesites.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -156,6 +187,35 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<section id="como-trabajo" class="reveal">
+  <div class="wrap">
+    <h2>Cómo trabajo</h2>
+    <p class="sub">Un proceso simple, sin sorpresas.</p>
+    <div class="steps grid" style="grid-template-columns:1fr;gap:28px">
+      <div class="step reveal">
+        <h3>Charlamos</h3>
+        <p>Me contás qué necesitás, para quién es y qué querés lograr. Sin compromiso.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Propuesta</h3>
+        <p>Te paso alcance, plazos y precio por escrito antes de empezar.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Entrega</h3>
+        <p>Lo publico, lo reviso con vos y queda listo para usarse, con soporte después.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta reveal">
+  <div class="wrap">
+    <h2>¿Tenés un negocio que necesita una web?</h2>
+    <p>Escribime y lo charlamos.</p>
+    <a class="btn primary" href="https://wa.me/542616417121" target="_blank" rel="noopener">Escribime por WhatsApp</a>
   </div>
 </section>
 
