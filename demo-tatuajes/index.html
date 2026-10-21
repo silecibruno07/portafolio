@@ -65,6 +65,32 @@
   .strip{border-top:1px solid var(--line);padding:26px 0 96px;color:var(--soft);font-size:.86rem;text-align:center}
   .strip b{color:var(--ink);font-weight:600}
 
+
+  .shot{margin:0 0 12px;padding:0;background:#0f0d0b}
+  .shot img{display:block;width:100%;height:auto}
+  .shot figcaption{position:absolute;left:10px;bottom:8px;font-size:.72rem;color:#efe9de;background:rgba(0,0,0,.55);padding:2px 8px;border-radius:4px;letter-spacing:.05em}
+  .shot{position:relative}
+  .shot.t,.shot.m,.shot.s,.shot.w{height:auto}
+  .loc{display:grid;gap:22px;grid-template-columns:1.1fr 1fr;align-items:stretch}
+  @media (max-width:700px){.loc{grid-template-columns:1fr}}
+  .map{position:relative;min-height:260px;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:
+    linear-gradient(90deg,transparent 48%,#2a2623 48%,#2a2623 52%,transparent 52%),
+    linear-gradient(0deg,transparent 48%,#2a2623 48%,#2a2623 52%,transparent 52%),
+    linear-gradient(90deg,transparent 18%,#221e1b 18%,#221e1b 19%,transparent 19%),
+    #12100e;background-size:100% 100%,100% 100%,100% 100%,auto}
+  .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);width:22px;height:22px;background:var(--warm);border-radius:50% 50% 50% 0;transform-origin:center;rotate:-45deg;box-shadow:0 6px 14px rgba(0,0,0,.5)}
+  .pin::after{content:"";position:absolute;left:6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent-ink)}
+  .map .label{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.6);padding:4px 10px;border-radius:4px;font-size:.78rem;color:var(--ink)}
+  .info p{margin:0 0 14px;color:var(--soft)}
+  .info b{color:var(--ink)}
+  table.t{width:100%;border-collapse:collapse;margin-top:6px}
+  table.t td{padding:12px 0;border-bottom:1px solid var(--line);color:var(--soft);font-size:.96rem}
+  table.t td:last-child{text-align:right;color:var(--ink);font-weight:600;white-space:nowrap}
+  table.t tr.hoy td{color:var(--warm)}
+  .grid2{display:grid;gap:40px;grid-template-columns:1fr 1fr}
+  @media (max-width:700px){.grid2{grid-template-columns:1fr;gap:34px}}
+  .precios-note{font-size:.78rem;color:var(--soft);margin-top:12px}
+
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -86,14 +112,14 @@
     <h2>Trabajo</h2>
     <p class="sub">Fotos de piezas reales del estudio.</p>
     <div class="collage">
-      <div class="shot t"><span>Fine line</span></div>
-      <div class="shot s"><span>Blackwork</span></div>
-      <div class="shot m"><span>Realismo</span></div>
-      <div class="shot w"><span>Old school</span></div>
-      <div class="shot s"><span>Minimal</span></div>
-      <div class="shot t"><span>Acuarela</span></div>
+      <figure class="shot"><img src="img/luna.png" alt="Diseño fine line de luna con fases" loading="lazy"><figcaption>Fine line · luna</figcaption></figure>
+      <figure class="shot"><img src="img/geometrico.png" alt="Blackwork geométrico" loading="lazy"><figcaption>Blackwork · geométrico</figcaption></figure>
+      <figure class="shot"><img src="img/rosa.png" alt="Rosa en espiral estilo old school" loading="lazy"><figcaption>Old school · rosa</figcaption></figure>
+      <figure class="shot"><img src="img/ancla.png" alt="Ancla con cuerda" loading="lazy"><figcaption>Old school · ancla</figcaption></figure>
+      <figure class="shot"><img src="img/mandala.png" alt="Mandala de puntos" loading="lazy"><figcaption>Dotwork · mandala</figcaption></figure>
+      <figure class="shot"><img src="img/ola.png" alt="Ondas de línea fina" loading="lazy"><figcaption>Línea fina · ondas</figcaption></figure>
     </div>
-    <p class="note">Marcadores de foto. Se reemplazan por imágenes del estudio.</p>
+    <p class="note">Ilustraciones de ejemplo. Se reemplazan por fotos de trabajos reales del estudio.</p>
   </div>
 </section>
 
@@ -122,9 +148,54 @@
   </div>
 </section>
 
+<section id="ubicacion">
+  <div class="wrap">
+    <h2>Dónde estamos</h2>
+    <p class="sub">Estudio ficticio. La ubicación es de ejemplo.</p>
+    <div class="loc">
+      <div class="map" role="img" aria-label="Mapa de ejemplo">
+        <div class="pin"></div>
+        <div class="label">Calle Ficticia 1234 · Godoy Cruz</div>
+      </div>
+      <div class="info">
+        <p><b>Dirección</b><br>Calle Ficticia 1234, Godoy Cruz, Mendoza</p>
+        <p><b>Referencia</b><br>A dos cuadras de la plaza principal, con cochera sobre la calle.</p>
+        <p><b>Cómo llegar</b><br>Colectivos que pasan por la avenida. Desde el centro, unos 10 minutos en auto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="horarios">
+  <div class="wrap grid2">
+    <div>
+      <h2>Horarios</h2>
+      <p class="sub">Los turnos se coordinan por WhatsApp.</p>
+      <table class="t">
+        <tr><td>Lunes</td><td>Cerrado</td></tr>
+        <tr><td>Martes a viernes</td><td>14:00 a 20:00</td></tr>
+        <tr><td>Sábado</td><td>10:00 a 14:00</td></tr>
+        <tr><td>Domingo</td><td>Cerrado</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>Costos</h2>
+      <p class="sub">Valores de ejemplo, según tamaño y complejidad.</p>
+      <table class="t">
+        <tr><td>Diseño chico (hasta 5 cm)</td><td>$ 25.000</td></tr>
+        <tr><td>Diseño mediano (5 a 15 cm)</td><td>$ 60.000</td></tr>
+        <tr><td>Pieza grande o realismo</td><td>A cotizar</td></tr>
+        <tr><td>Cover up</td><td>A cotizar</td></tr>
+        <tr><td>Seña para confirmar turno</td><td>$ 10.000</td></tr>
+      </table>
+      <p class="precios-note">Los precios reales se confirman en la consulta.</p>
+    </div>
+  </div>
+</section>
+
 <footer class="strip">
   <div class="wrap">
-    <b>Godoy Cruz, Mendoza</b> · Mar a sáb, de 14 a 20 hs · Av. ejemplo 1234
+    <b>Tinta Negra</b> · Godoy Cruz, Mendoza · Demo de ejemplo
   </div>
 </footer>
 
