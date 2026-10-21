@@ -8,126 +8,127 @@
 <meta property="og:title" content="Tinta Negra — Estudio de tatuajes (demo)">
 <meta property="og:description" content="Ejemplo de página para estudio de tatuajes.">
 <style>
-  :root{--bg:#0d0d0d;--surface:#161616;--ink:#f1efe8;--soft:#9b9b94;--line:#262626;--accent:#c9a45c;--accent-ink:#0d0d0d;--radius:14px}
+  :root{--bg:#0b0a09;--surface:#151311;--ink:#efe9de;--soft:#a39d92;--line:#2a2623;--warm:#d19a4e;--accent-ink:#0b0a09}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
   a{color:inherit}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
-  .demo{background:var(--accent);color:var(--accent-ink);text-align:center;font-size:.85rem;padding:8px 12px;font-weight:600}
-  header{padding:80px 0 56px;text-align:center;border-bottom:1px solid var(--line)}
-  .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;margin:0 0 12px}
-  h1{font-size:clamp(2.4rem,7vw,4.2rem);margin:0 0 14px;letter-spacing:.02em}
-  .lead{color:var(--soft);max-width:600px;margin:0 auto 28px}
-  .btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;background:var(--accent);color:var(--accent-ink);transition:transform .2s}
-  .btn:hover{transform:translateY(-2px)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
-  section{padding:56px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:1.8rem;margin:0 0 6px}
-  .sub{color:var(--soft);margin:0 0 26px}
-  .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-  .piece{aspect-ratio:1/1;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(135deg,#1f1f1f,#2b2416);display:flex;align-items:flex-end;padding:12px;font-size:.8rem;color:var(--soft);transition:transform .25s,border-color .25s}
-  .piece:nth-child(2){background:linear-gradient(135deg,#1a1a22,#24203a)}
-  .piece:nth-child(3){background:linear-gradient(135deg,#221a1a,#3a2020)}
-  .piece:nth-child(4){background:linear-gradient(135deg,#1a211a,#203a24)}
-  .piece:nth-child(5){background:linear-gradient(135deg,#202020,#353535)}
-  .piece:nth-child(6){background:linear-gradient(135deg,#1c2226,#21363f)}
-  .piece:hover{transform:scale(1.03);border-color:var(--accent)}
-  .note{font-size:.8rem;color:var(--soft);margin-top:12px}
-  .styles{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-  .style{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .style h3{margin:0 0 6px;color:var(--accent)}
-  .style p{margin:0;color:var(--soft);font-size:.95rem}
-  table{width:100%;border-collapse:collapse}
-  td{padding:12px 0;border-bottom:1px solid var(--line)}
-  td:last-child{text-align:right;color:var(--accent);font-weight:600}
-  .info{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-  .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .box h3{margin:0 0 8px}
-  .box p{margin:0;color:var(--soft)}
-  .cta{text-align:center;padding:64px 0}
-  footer{text-align:center;color:var(--soft);font-size:.85rem;padding:28px 0}
-  @media (max-width:600px){.btn.ghost{margin:12px 0 0;display:inline-block}}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  .demo{background:var(--warm);color:var(--accent-ink);text-align:center;font-size:.8rem;padding:7px 12px;font-weight:600;letter-spacing:.02em}
+
+  /* Hero: ambiente de estudio */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:90px 18px;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(209,154,78,.18), transparent 45%),
+      radial-gradient(ellipse at 85% 85%, rgba(120,70,40,.22), transparent 50%),
+      linear-gradient(180deg,#14110e 0%,#0b0a09 100%)}
+  .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:4px 4px;pointer-events:none}
+  .hero-inner{position:relative;z-index:1;max-width:720px}
+  .eyebrow{color:var(--warm);text-transform:uppercase;letter-spacing:.3em;font-size:.72rem;margin:0 0 18px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(3rem,10vw,6rem);line-height:1;margin:0 0 20px;letter-spacing:.02em}
+  .lead{color:var(--soft);font-size:1.1rem;max-width:520px;margin:0 auto}
+  .scroll{margin-top:44px;color:var(--soft);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+
+  /* Galería tipo collage */
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:2rem;margin:0 0 8px}
+  .sub{color:var(--soft);margin:0 0 30px}
+  .collage{columns:2 180px;column-gap:12px}
+  .shot{break-inside:avoid;margin:0 0 12px;border-radius:6px;border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .35s ease,border-color .35s}
+  .shot:hover{transform:translateY(-4px);border-color:var(--warm)}
+  .shot.t{height:260px;background:linear-gradient(160deg,#2a211a,#0f0d0b)}
+  .shot.m{height:200px;background:linear-gradient(200deg,#1d1a17,#3b2e22)}
+  .shot.s{height:150px;background:linear-gradient(140deg,#262320,#0e0d0c)}
+  .shot.w{height:230px;background:linear-gradient(120deg,#1a1714,#4a3626 120%)}
+  .shot span{position:absolute;left:10px;bottom:8px;font-size:.72rem;color:var(--soft);letter-spacing:.05em}
+  .note{font-size:.78rem;color:var(--soft);margin-top:14px}
+
+  /* El estudio */
+  .room{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .card{border-left:2px solid var(--warm);padding:6px 0 6px 18px}
+  .card h3{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.25rem}
+  .card p{margin:0;color:var(--soft);font-size:.96rem}
+
+  /* Proceso */
+  .journey{display:flex;flex-wrap:wrap;gap:0;justify-content:space-between;counter-reset:p}
+  .journey div{flex:1 1 180px;padding:18px 14px 0 0}
+  .journey div::before{counter-increment:p;content:"0" counter(p);display:block;font-family:Georgia,serif;color:var(--warm);font-size:1.6rem;margin-bottom:6px}
+  .journey h3{margin:0 0 4px;font-weight:600;font-size:1rem}
+  .journey p{margin:0;color:var(--soft);font-size:.9rem}
+
+  /* Botón flotante de WhatsApp */
+  .float{position:fixed;right:18px;bottom:18px;z-index:10;display:flex;align-items:center;gap:10px;background:var(--warm);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.92rem;padding:12px 18px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(209,154,78,.6);transition:transform .2s}
+  .float:hover{transform:translateY(-2px)}
+  .float .dot{width:9px;height:9px;border-radius:50%;background:#2fbf71;box-shadow:0 0 0 0 rgba(47,191,113,.7);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,191,113,.6)}70%{box-shadow:0 0 0 10px rgba(47,191,113,0)}100%{box-shadow:0 0 0 0 rgba(47,191,113,0)}}
+
+  /* Franja de datos */
+  .strip{border-top:1px solid var(--line);padding:26px 0 96px;color:var(--soft);font-size:.86rem;text-align:center}
+  .strip b{color:var(--ink);font-weight:600}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
 <div class="demo">Sitio de demostración. Tinta Negra es un estudio ficticio.</div>
 
-<header>
-  <div class="wrap">
+<header class="hero">
+  <div class="hero-inner">
     <p class="eyebrow">Estudio de tatuajes · Mendoza</p>
     <h1>Tinta Negra</h1>
-    <p class="lead">Tatuajes personalizados, cuidado profesional y diseños que cuentan tu historia. Sin plantillas copiadas.</p>
-    <a class="btn" href="https://wa.me/5492610000000" target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
-    <a class="btn ghost" href="#trabajos">Ver trabajos</a>
+    <p class="lead">Un lugar tranquilo para hacerte algo que dure toda la vida. Diseño propio, mano firme y tiempo para charlar la idea.</p>
+    <p class="scroll">Desplazate para ver el estudio</p>
   </div>
 </header>
 
 <section id="trabajos">
   <div class="wrap">
-    <h2>Trabajos</h2>
-    <p class="sub">Galería de ejemplo. Acá irían fotos reales de los tatuajes del estudio.</p>
-    <div class="gallery">
-      <div class="piece">Fine line · floral</div>
-      <div class="piece">Blackwork · geométrico</div>
-      <div class="piece">Realismo · retrato</div>
-      <div class="piece">Old school · ancla</div>
-      <div class="piece">Minimal · luna</div>
-      <div class="piece">Acuarela · abstracto</div>
+    <h2>Trabajo</h2>
+    <p class="sub">Fotos de piezas reales del estudio.</p>
+    <div class="collage">
+      <div class="shot t"><span>Fine line</span></div>
+      <div class="shot s"><span>Blackwork</span></div>
+      <div class="shot m"><span>Realismo</span></div>
+      <div class="shot w"><span>Old school</span></div>
+      <div class="shot s"><span>Minimal</span></div>
+      <div class="shot t"><span>Acuarela</span></div>
     </div>
-    <p class="note">Imágenes de ejemplo. Se reemplazan por fotos del estudio.</p>
+    <p class="note">Marcadores de foto. Se reemplazan por imágenes del estudio.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Estilos</h2>
-    <p class="sub">Trabajamos con varios estilos. Contame la idea y te asesoro.</p>
-    <div class="styles">
-      <div class="style"><h3>Fine line</h3><p>Trazos finos y delicados para diseños pequeños y elegantes.</p></div>
-      <div class="style"><h3>Blackwork</h3><p>Figuras con mucho negro sólido y composiciones audaces.</p></div>
-      <div class="style"><h3>Realismo</h3><p>Retratos y escenas con sombras y detalle fotográfico.</p></div>
-      <div class="style"><h3>Old school</h3><p>Colores fuertes y líneas gruesas, con clásicos como anclas y rosas.</p></div>
+    <h2>El estudio</h2>
+    <p class="sub">Un espacio para estar tranquilo mientras se trabaja.</p>
+    <div class="room">
+      <div class="card"><h3>Ambiente cálido</h3><p>Luz baja, música suave y madera. Sin apuro.</p></div>
+      <div class="card"><h3>Higiene total</h3><p>Materiales descartables y esterilización a la vista.</p></div>
+      <div class="card"><h3>Diseño propio</h3><p>Si la idea es tuya, la adaptamos. Si no, la dibujamos juntos.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Precios orientativos</h2>
-    <p class="sub">Cada diseño se cotiza según tamaño y complejidad.</p>
-    <table>
-      <tr><td>Diseño chico (hasta 5 cm)</td><td>Desde $ 25.000</td></tr>
-      <tr><td>Diseño mediano (5 a 15 cm)</td><td>Desde $ 60.000</td></tr>
-      <tr><td>Pieza grande o realismo</td><td>A cotizar</td></tr>
-      <tr><td>Cover up</td><td>A cotizar</td></tr>
-    </table>
-    <p class="note">Valores de ejemplo. Se actualizan con los precios reales del estudio.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Información</h2>
-    <div class="info">
-      <div class="box"><h3>Dirección</h3><p>Av. ejemplo 1234, Godoy Cruz, Mendoza</p></div>
-      <div class="box"><h3>Horarios</h3><p>Lunes a viernes de 14 a 20 hs. Sábados de 10 a 14 hs.</p></div>
-      <div class="box"><h3>Turnos</h3><p>Se reservan por WhatsApp con una seña para confirmar.</p></div>
+    <h2>Cómo es tu visita</h2>
+    <p class="sub">Del primer mensaje a la sesión.</p>
+    <div class="journey">
+      <div><h3>Contame la idea</h3><p>Una foto de referencia, la zona del cuerpo y el tamaño aproximado.</p></div>
+      <div><h3>Diseñamos juntos</h3><p>Te muestro una propuesta antes de tatuar, sin compromiso.</p></div>
+      <div><h3>Sesión</h3><p>Tiempo para hacerlo bien, con pausas si hace falta.</p></div>
+      <div><h3>Cuidado</h3><p>Te explico cómo cuidarlo para que cicatrice perfecto.</p></div>
     </div>
   </div>
 </section>
 
-<div class="cta">
+<footer class="strip">
   <div class="wrap">
-    <h2>¿Querés tatuarte algo?</h2>
-    <p class="sub">Escribinos con la idea, la zona del cuerpo y el tamaño aproximado.</p>
-    <a class="btn" href="https://wa.me/5492610000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <b>Godoy Cruz, Mendoza</b> · Mar a sáb, de 14 a 20 hs · Av. ejemplo 1234
   </div>
-</div>
-
-<footer>
-  <div class="wrap">Tinta Negra · Sitio de demostración</div>
 </footer>
+
+<a class="float" href="https://wa.me/5492610000000" target="_blank" rel="noopener"><span class="dot"></span>Consultá por WhatsApp</a>
 
 </body>
 </html>
