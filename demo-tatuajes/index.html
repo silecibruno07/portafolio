@@ -91,6 +91,21 @@
   @media (max-width:700px){.grid2{grid-template-columns:1fr;gap:34px}}
   .precios-note{font-size:.78rem;color:var(--soft);margin-top:12px}
 
+
+  .gallery{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .card-shot{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .card-shot:hover{transform:translateY(-4px);border-color:var(--warm);box-shadow:0 18px 36px -22px rgba(0,0,0,.8)}
+  .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+  .zoom img{display:block;width:100%;height:auto;aspect-ratio:1/1;transition:transform .5s ease}
+  .card-shot:hover .zoom img{transform:scale(1.04)}
+  .card-shot figcaption{padding:12px 14px 14px;color:var(--soft);font-size:.85rem;border-top:1px solid var(--line)}
+  .card-shot figcaption b{color:var(--warm);font-weight:600}
+  dialog.viewer{border:0;padding:0;background:transparent;max-width:min(92vw,720px)}
+  dialog.viewer::backdrop{background:rgba(0,0,0,.85)}
+  dialog.viewer img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+  dialog.viewer .close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;border:0;background:var(--warm);color:var(--accent-ink);font-size:1.2rem;font-weight:700;cursor:pointer}
+  dialog.viewer .wrapv{position:relative}
+
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -111,15 +126,15 @@
   <div class="wrap">
     <h2>Trabajo</h2>
     <p class="sub">Fotos de piezas reales del estudio.</p>
-    <div class="collage">
-      <figure class="shot"><img src="img/luna.png" alt="Diseño fine line de luna con fases" loading="lazy"><figcaption>Fine line · luna</figcaption></figure>
-      <figure class="shot"><img src="img/geometrico.png" alt="Blackwork geométrico" loading="lazy"><figcaption>Blackwork · geométrico</figcaption></figure>
-      <figure class="shot"><img src="img/rosa.png" alt="Rosa en espiral estilo old school" loading="lazy"><figcaption>Old school · rosa</figcaption></figure>
-      <figure class="shot"><img src="img/ancla.png" alt="Ancla con cuerda" loading="lazy"><figcaption>Old school · ancla</figcaption></figure>
-      <figure class="shot"><img src="img/mandala.png" alt="Mandala de puntos" loading="lazy"><figcaption>Dotwork · mandala</figcaption></figure>
-      <figure class="shot"><img src="img/ola.png" alt="Ondas de línea fina" loading="lazy"><figcaption>Línea fina · ondas</figcaption></figure>
+    <div class="gallery">
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/luna.svg" aria-label="Ver ampliado"><img src="img/luna.svg" alt="Diseño fine line de luna con fases" loading="lazy"></button><figcaption><b>Fine line</b> · Luna con fases</figcaption></figure>
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/geometrico.svg" aria-label="Ver ampliado"><img src="img/geometrico.svg" alt="Blackwork geométrico" loading="lazy"></button><figcaption><b>Blackwork</b> · Geométrico</figcaption></figure>
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/rosa.svg" aria-label="Ver ampliado"><img src="img/rosa.svg" alt="Rosa en espiral estilo old school" loading="lazy"></button><figcaption><b>Old school</b> · Rosa</figcaption></figure>
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/ancla.svg" aria-label="Ver ampliado"><img src="img/ancla.svg" alt="Ancla con cuerda" loading="lazy"></button><figcaption><b>Old school</b> · Ancla</figcaption></figure>
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/mandala.svg" aria-label="Ver ampliado"><img src="img/mandala.svg" alt="Mandala de puntos" loading="lazy"></button><figcaption><b>Dotwork</b> · Mandala</figcaption></figure>
+      <figure class="card-shot"><button type="button" class="zoom" data-src="img/ondas.svg" aria-label="Ver ampliado"><img src="img/ondas.svg" alt="Ondas de línea fina" loading="lazy"></button><figcaption><b>Línea fina</b> · Ondas</figcaption></figure>
     </div>
-    <p class="note">Ilustraciones de ejemplo. Se reemplazan por fotos de trabajos reales del estudio.</p>
+    <p class="note">Ilustraciones de ejemplo. Tocá una para verla más grande.</p>
   </div>
 </section>
 
@@ -201,5 +216,25 @@
 
 <a class="float" href="https://wa.me/5492610000000" target="_blank" rel="noopener"><span class="dot"></span>Consultá por WhatsApp</a>
 
+<dialog class="viewer" id="viewer">
+  <div class="wrapv">
+    <button type="button" class="close" id="viewer-close" aria-label="Cerrar">×</button>
+    <img id="viewer-img" src="" alt="">
+  </div>
+</dialog>
+<script>
+  (function(){
+    var dlg=document.getElementById('viewer'), img=document.getElementById('viewer-img');
+    document.querySelectorAll('.zoom').forEach(function(b){
+      b.addEventListener('click',function(){
+        img.src=b.getAttribute('data-src');
+        img.alt=b.querySelector('img').alt;
+        dlg.showModal();
+      });
+    });
+    document.getElementById('viewer-close').addEventListener('click',function(){dlg.close();});
+    dlg.addEventListener('click',function(e){ if(e.target===dlg){ dlg.close(); } });
+  })();
+</script>
 </body>
 </html>
