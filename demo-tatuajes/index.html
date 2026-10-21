@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinta Negra — Estudio de tatuajes (demo)</title>
+<meta name="description" content="Estudio de tatuajes de ejemplo. Sitio de demostración, no corresponde a un negocio real.">
+<meta property="og:title" content="Tinta Negra — Estudio de tatuajes (demo)">
+<meta property="og:description" content="Ejemplo de página para estudio de tatuajes.">
+<style>
+  :root{--bg:#0d0d0d;--surface:#161616;--ink:#f1efe8;--soft:#9b9b94;--line:#262626;--accent:#c9a45c;--accent-ink:#0d0d0d;--radius:14px}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  .demo{background:var(--accent);color:var(--accent-ink);text-align:center;font-size:.85rem;padding:8px 12px;font-weight:600}
+  header{padding:80px 0 56px;text-align:center;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;margin:0 0 12px}
+  h1{font-size:clamp(2.4rem,7vw,4.2rem);margin:0 0 14px;letter-spacing:.02em}
+  .lead{color:var(--soft);max-width:600px;margin:0 auto 28px}
+  .btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;background:var(--accent);color:var(--accent-ink);transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:1.8rem;margin:0 0 6px}
+  .sub{color:var(--soft);margin:0 0 26px}
+  .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .piece{aspect-ratio:1/1;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(135deg,#1f1f1f,#2b2416);display:flex;align-items:flex-end;padding:12px;font-size:.8rem;color:var(--soft);transition:transform .25s,border-color .25s}
+  .piece:nth-child(2){background:linear-gradient(135deg,#1a1a22,#24203a)}
+  .piece:nth-child(3){background:linear-gradient(135deg,#221a1a,#3a2020)}
+  .piece:nth-child(4){background:linear-gradient(135deg,#1a211a,#203a24)}
+  .piece:nth-child(5){background:linear-gradient(135deg,#202020,#353535)}
+  .piece:nth-child(6){background:linear-gradient(135deg,#1c2226,#21363f)}
+  .piece:hover{transform:scale(1.03);border-color:var(--accent)}
+  .note{font-size:.8rem;color:var(--soft);margin-top:12px}
+  .styles{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .style{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .style h3{margin:0 0 6px;color:var(--accent)}
+  .style p{margin:0;color:var(--soft);font-size:.95rem}
+  table{width:100%;border-collapse:collapse}
+  td{padding:12px 0;border-bottom:1px solid var(--line)}
+  td:last-child{text-align:right;color:var(--accent);font-weight:600}
+  .info{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .box h3{margin:0 0 8px}
+  .box p{margin:0;color:var(--soft)}
+  .cta{text-align:center;padding:64px 0}
+  footer{text-align:center;color:var(--soft);font-size:.85rem;padding:28px 0}
+  @media (max-width:600px){.btn.ghost{margin:12px 0 0;display:inline-block}}
+</style>
+</head>
+<body>
+
+<div class="demo">Sitio de demostración. Tinta Negra es un estudio ficticio.</div>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Estudio de tatuajes · Mendoza</p>
+    <h1>Tinta Negra</h1>
+    <p class="lead">Tatuajes personalizados, cuidado profesional y diseños que cuentan tu historia. Sin plantillas copiadas.</p>
+    <a class="btn" href="https://wa.me/5492610000000" target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
+    <a class="btn ghost" href="#trabajos">Ver trabajos</a>
+  </div>
+</header>
+
+<section id="trabajos">
+  <div class="wrap">
+    <h2>Trabajos</h2>
+    <p class="sub">Galería de ejemplo. Acá irían fotos reales de los tatuajes del estudio.</p>
+    <div class="gallery">
+      <div class="piece">Fine line · floral</div>
+      <div class="piece">Blackwork · geométrico</div>
+      <div class="piece">Realismo · retrato</div>
+      <div class="piece">Old school · ancla</div>
+      <div class="piece">Minimal · luna</div>
+      <div class="piece">Acuarela · abstracto</div>
+    </div>
+    <p class="note">Imágenes de ejemplo. Se reemplazan por fotos del estudio.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Estilos</h2>
+    <p class="sub">Trabajamos con varios estilos. Contame la idea y te asesoro.</p>
+    <div class="styles">
+      <div class="style"><h3>Fine line</h3><p>Trazos finos y delicados para diseños pequeños y elegantes.</p></div>
+      <div class="style"><h3>Blackwork</h3><p>Figuras con mucho negro sólido y composiciones audaces.</p></div>
+      <div class="style"><h3>Realismo</h3><p>Retratos y escenas con sombras y detalle fotográfico.</p></div>
+      <div class="style"><h3>Old school</h3><p>Colores fuertes y líneas gruesas, con clásicos como anclas y rosas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Precios orientativos</h2>
+    <p class="sub">Cada diseño se cotiza según tamaño y complejidad.</p>
+    <table>
+      <tr><td>Diseño chico (hasta 5 cm)</td><td>Desde $ 25.000</td></tr>
+      <tr><td>Diseño mediano (5 a 15 cm)</td><td>Desde $ 60.000</td></tr>
+      <tr><td>Pieza grande o realismo</td><td>A cotizar</td></tr>
+      <tr><td>Cover up</td><td>A cotizar</td></tr>
+    </table>
+    <p class="note">Valores de ejemplo. Se actualizan con los precios reales del estudio.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Información</h2>
+    <div class="info">
+      <div class="box"><h3>Dirección</h3><p>Av. ejemplo 1234, Godoy Cruz, Mendoza</p></div>
+      <div class="box"><h3>Horarios</h3><p>Lunes a viernes de 14 a 20 hs. Sábados de 10 a 14 hs.</p></div>
+      <div class="box"><h3>Turnos</h3><p>Se reservan por WhatsApp con una seña para confirmar.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>¿Querés tatuarte algo?</h2>
+    <p class="sub">Escribinos con la idea, la zona del cuerpo y el tamaño aproximado.</p>
+    <a class="btn" href="https://wa.me/5492610000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Tinta Negra · Sitio de demostración</div>
+</footer>
+
+</body>
+</html>
